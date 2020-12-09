@@ -1,0 +1,64 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+
+}
+
+td {
+  position: relative;
+  border: 2px solid white;
+}
+
+
+#canvas {
+  background: black;
+}
+
+.game__td {
+  padding: 10px 15px;
+  width: 50%;
+}
+
+.game__start {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.game__container {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+}
+
+.game__text {
+  margin: 10px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
