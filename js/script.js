@@ -13,7 +13,8 @@ const
 let
     gs = 10, // Ширина клетки
     tc = canv.width / gs, // Количество клеток
-
+    keyCode,
+    
     // Координаты головы
     px = Math.floor(Math.random() * tc),
     py = Math.floor(Math.random() * tc),
@@ -29,6 +30,7 @@ let
     trail = [], // Голова
     tail = 5, // Длина хвоста
     score = 0, // Счёт
+    speed = 10,
 
     // Время
     sec = 0,
@@ -36,6 +38,24 @@ let
     time = `Время: ${min}:0${sec}`;
 
 function game() {
+    switch (keyCode) {
+        case 37: // Влево
+            xv = xv === 1 ? 1 : -1;
+            yv = 0;
+            break;
+        case 38: // Вверх
+            xv = 0;
+            yv = yv === 1 ? 1 : -1;
+            break;
+        case 39: // Вправо
+            xv = xv === -1 ? -1 : 1;
+            yv = 0;
+            break;
+        case 40: // Вниз
+            xv = 0;
+            yv = yv === -1 ? -1 : 1;
+            break;
+    }
     // Движение
     px += xv;
     py += yv;
@@ -99,25 +119,8 @@ function game() {
 }
 
 // Изменение направления
-function keyPush(evt) {
-    switch (evt.keyCode) {
-        case 37: // Влево
-            xv = xv === 1 ? 1 : -1;
-            yv = 0;
-            break;
-        case 38: // Вверх
-            xv = 0;
-            yv = yv === 1 ? 1 : -1;
-            break;
-        case 39: // Вправо
-            xv = xv === -1 ? -1 : 1;
-            yv = 0;
-            break;
-        case 40: // Вниз
-            xv = 0;
-            yv = yv === -1 ? -1 : 1;
-            break;
-    }
+function keyPush(e) {
+    keyCode = e.keyCode;
 }
 
 window.onload = function () {
