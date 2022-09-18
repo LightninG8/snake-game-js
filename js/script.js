@@ -16,7 +16,7 @@ let
 
     // Координаты головы
     px = Math.floor(Math.random() * tc),
-    py = Math.floor(Math.random() * tc),
+    py = Math.floor(Math.random() * tc / 2),
 
     // Яблоко
     ax = Math.floor(Math.random() * tc),
@@ -24,7 +24,7 @@ let
 
     // Направление
     xv = 0,
-    yv = 0,
+    yv = 1,
 
     trail = [], // Голова
     tail = 5, // Длина хвоста
